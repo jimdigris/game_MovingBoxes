@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(php|html|htm)\ HTTP/ 
+RewriteRule ^(.*)index\.(php|html|htm)$ $1 [R=301,L]
