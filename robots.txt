@@ -1,0 +1,7 @@
+User-agent: Yandex 
+Disallow: /assets/
+
+User-agent: * 
+Disallow: /assets/
+
+Host: http://boxes.web-vluki.ru/

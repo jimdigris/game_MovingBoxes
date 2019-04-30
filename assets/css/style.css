@@ -1,0 +1,345 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #596a6c;
+}
+
+.preTitle {
+    font-size: 25px;
+    color: #28b462;
+    font-weight: bold;
+    margin-bottom: -20px;
+    margin-left: 35px;    
+}
+
+.title {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #c64032;
+    text-shadow: 4px 5px #276269;
+    border-bottom: 3px solid #28b462;
+    margin-bottom: 15px;
+}
+
+.copyright  {
+    font-size: 14px;
+    color: #28b462;
+    border-top: 3px solid #28b462;
+    padding-top: 3px;
+    font-style: italic;
+    text-align: right;
+}
+
+.copyright a {
+    color: #88cca4;  
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: #28b462;    
+}
+
+.copyright a:visited {
+    color: #88cca4;    
+}
+
+.textGame {
+    padding: 0 0 15px 15px;
+    font-size: 20px;
+    color: #dd6f63;
+    font-weight: bold;
+    text-shadow: 2px 2px #5b5d5d;
+}
+
+.best {
+    color: #3e87b6;
+}
+
+#anew, #prevLvl, #nextLvl, #menu {
+    padding: 6px 5px;
+    background: #28b462;
+    background: linear-gradient(to bottom, #28b462, #528768);
+    margin-top: 10px;
+    border: 3px solid #456b55;
+    border-radius: 20px;
+    color: #d8d1d0;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+    box-shadow: 3px 4px #57686b;
+    font-size: 14px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+#prevLvl {
+    width: 140px;
+    float: left;
+    padding: 6px 25px;
+    margin-top: 10px;
+  
+}
+
+#nextLvl {
+    width: 140px;
+    float: left;
+    margin-left: 20px;
+    padding: 6px 25px;
+    margin-top: 10px;
+}
+
+#anew:hover, #menu:hover {
+    color: #e6d9d6;
+    cursor: pointer;
+    background: #3cb66e;
+    border: 3px solid #4a745c;
+}
+
+#anew:active, #menu:active {
+    margin-top: 11px;
+    margin-left: 1px;
+    box-shadow: 2px 3px #3c6b71;
+}
+
+#prevLvl:hover, #nextLvl:hover {
+    color: #e6d9d6;
+    cursor: pointer;
+    background: #3cb66e;
+    border: 3px solid #4a745c;
+}
+
+#prevLvl:active {
+    margin-top: 11px;
+    margin-left: 1px;
+    box-shadow: 3px 4px #3c6b71;
+}
+
+#nextLvl:active {
+    margin-top: 11px;
+    margin-left: 21px;
+    box-shadow: 2px 3px #3c6b71;
+}
+
+#prevLvlDis, #nextLvlDis {
+    padding: 6px 5px;
+    background: #28b462;
+    background: linear-gradient(to bottom, #9cc8ae, #5f7a6a);
+    margin-top: 10px;
+    border: 3px solid #728379;
+    border-radius: 20px;
+    color: #bdc0bb;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+    box-shadow: 3px 4px #57686b;
+    font-size: 14px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    display: block;   
+}
+
+#prevLvlDis {
+    width: 140px;
+    position: absolute;
+  
+}
+
+#nextLvlDis {
+    width: 140px;
+    position: absolute;
+    left: 175px;
+}
+
+.warning {
+    z-index: 400;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 60px;
+    text-align: center;
+    font-weight: bold;
+    background: #c64032;
+    border: 4px solid #e74c3c;
+    width: 300px;   
+    margin-top: 10%;
+    color: #fff9f9;
+    box-shadow: 4px 4px #575050;
+    display: none;
+}
+
+#congratulation {
+    padding: 6px 5px;
+    background: #28b462;
+    background: linear-gradient(to bottom, #e74c3c, #c64032);
+    margin-top: 70px;
+    border: 3px solid #ad382b;
+    border-radius: 10px;
+    color: #f2e7e5;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+    box-shadow: 3px 4px #57686b;
+    font-size: 14px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    display: none;
+    
+    opacity:0;
+	transition: 1s; 
+	animation: show 2s 1; 
+    animation-fill-mode: forwards; 
+    animation-delay: 0.3s; 
+}
+
+
+@keyframes show{
+	 0%{opacity:0;}
+	 100% { opacity:1;}
+}
+
+/* ---- Стили для модальных окон ---- */
+/* Стили для подложки */
+.j-overlay {
+   /* Скрываем подложку  */
+   opacity: 0;
+   visibility: hidden;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, .5);
+   z-index: 2000;
+   transition: .3s all;
+}
+
+.j-modal {
+   /* Скрываем окна  */
+   opacity: 0;
+   visibility: hidden;
+   
+   /*  Установаем ширину окна  */
+   width: 100%;
+   max-width: 500px;
+   
+   /*  Центрируем и задаем z-index */
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 3000; /* Должен быть выше чем у подложки*/
+   
+   /*  Побочные стили   */
+   box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
+   text-align: center;
+   padding: 30px;
+   border-radius: 3px;
+   background-color: #28b462;
+   transition: 0.3s all;
+   border: 6px solid #358a58;
+}
+/* Стили для активных классов подложки и окна */
+.j-modal.active,
+.j-overlay.active{
+   opacity: 1;
+   visibility: visible;
+   display: block;
+}
+
+/* Стили для кнопки закрытия */
+.j-modal__cross {
+   width: 15px;
+   height: 15px;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   fill: #444;
+   cursor: pointer;
+}
+
+.j-modal__title {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #c64032;
+    text-shadow: 2px 2px #276269;
+    border-bottom: 3px solid #276269;
+    margin-bottom: 20px;
+}
+
+.j-modal__text {
+    color: #e0dada;
+    font-weight: bold;
+    text-align: justify;    
+}
+
+.j-modal__text a:link {
+    color: #c64032;
+}
+
+.j-modal__text a:hover {
+    color: #d25b4f;
+}
+
+.j-modal__text a:visited {
+    color: #c64032;
+}
+/* ---- Стили для модальных окон ---- */
+
+
+@media (max-width: 1170px) {
+
+}
+
+@media (max-width: 1023px) and (orientation:landscape) {
+   /* .title {
+        font-size: 30px;
+        border-bottom: 2px solid #28b462;
+    }
+    
+    .preTitle {
+        font-size: 17px;
+        margin-bottom: -10px;
+        margin-left: 17px;
+    }
+    
+    .textGame {
+        font-size: 14px;
+        padding: 0 0 5px 15px;
+    }
+    
+    .copyright {
+        font-size: 12px;
+        border-top: 2px solid #28b462;
+        margin-top: 10px;
+    }
+    
+    #anew, #prevLvl, #nextLvl, #menu {
+        padding: 4px 3px;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+    
+    #nextLvl {
+        margin-left: 12px;
+    } */
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+
+
